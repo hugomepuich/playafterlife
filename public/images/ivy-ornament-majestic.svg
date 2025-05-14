@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="800" viewBox="0 0 150 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tige principale -->
+  <path d="M30 0 Q 25 400 30 800" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
+  
+  <!-- Tiges secondaires majestueuses -->
+  <path d="M30 50 Q 32 150 30 250" stroke="white" stroke-width="1.5" fill="none" opacity="0.8"/>
+  <path d="M30 300 Q 28 400 30 500" stroke="white" stroke-width="1.5" fill="none" opacity="0.8"/>
+  <path d="M30 550 Q 32 650 30 750" stroke="white" stroke-width="1.5" fill="none" opacity="0.8"/>
+  
+  <!-- Grandes feuilles majestueuses vers l'intérieur (côté droit) -->
+  <!-- Feuille 1 -->
+  <path d="M30 80 C 40 75 60 70 85 85 C 110 100 125 120 115 140 C 105 160 80 155 60 140 C 40 125 30 95 30 85" stroke="white" stroke-width="1.8" fill="none" opacity="0.85"/>
+  <path d="M85 85 C 95 95 105 110 110 125" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M110 120 C 100 135 85 142 70 140" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M70 85 C 85 95 95 110 90 125" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 2 -->
+  <path d="M30 180 C 45 175 75 170 105 190 C 135 210 145 235 130 260 C 115 285 85 280 60 260 C 35 240 30 195 30 185" stroke="white" stroke-width="1.8" fill="none" opacity="0.85"/>
+  <path d="M105 190 C 120 205 130 225 130 245" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M125 240 C 110 255 90 265 70 255" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M70 190 C 90 205 105 225 95 245" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 3 -->
+  <path d="M30 300 C 40 295 70 290 95 310 C 120 330 130 350 120 370 C 110 390 80 385 60 370 C 40 355 30 310 30 305" stroke="white" stroke-width="1.8" fill="none" opacity="0.85"/>
+  <path d="M95 310 C 110 325 120 345 115 360" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M115 350 C 100 365 80 370 65 365" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M65 310 C 80 320 90 340 85 355" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 4 -->
+  <path d="M30 420 C 45 415 80 410 110 435 C 140 460 150 485 135 510 C 120 535 85 530 60 510 C 35 490 30 430 30 425" stroke="white" stroke-width="1.8" fill="none" opacity="0.85"/>
+  <path d="M110 435 C 125 450 135 470 135 490" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M130 485 C 115 505 90 510 70 505" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M70 435 C 90 450 105 470 95 490" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 5 -->
+  <path d="M30 540 C 40 535 70 530 95 550 C 120 570 130 590 120 610 C 110 630 80 625 60 610 C 40 595 30 550 30 545" stroke="white" stroke-width="1.8" fill="none" opacity="0.85"/>
+  <path d="M95 550 C 110 565 120 585 115 600" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M115 590 C 100 605 80 610 65 605" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M65 550 C 80 560 90 580 85 595" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 6 -->
+  <path d="M30 660 C 45 655 80 650 110 675 C 140 700 150 725 135 750 C 120 775 85 770 60 750 C 35 730 30 670 30 665" stroke="white" stroke-width="1.8" fill="none" opacity="0.85"/>
+  <path d="M110 675 C 125 690 135 710 135 730" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M130 725 C 115 745 90 750 70 745" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M70 675 C 90 690 105 710 95 730" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Ornements gothiques majestueux -->
+  <circle cx="30" cy="50" r="5" stroke="white" stroke-width="1.2" fill="none" opacity="0.9"/>
+  <circle cx="30" cy="50" r="3" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <path d="M30 55 L 36 60 L 30 65 L 24 60 Z" stroke="white" stroke-width="0.8" fill="none" opacity="0.8"/>
+  
+  <circle cx="30" cy="150" r="5" stroke="white" stroke-width="1.2" fill="none" opacity="0.9"/>
+  <circle cx="30" cy="150" r="3" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <path d="M30 155 L 36 160 L 30 165 L 24 160 Z" stroke="white" stroke-width="0.8" fill="none" opacity="0.8"/>
+  
+  <circle cx="30" cy="270" r="5" stroke="white" stroke-width="1.2" fill="none" opacity="0.9"/>
+  <circle cx="30" cy="270" r="3" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <path d="M30 275 L 36 280 L 30 285 L 24 280 Z" stroke="white" stroke-width="0.8" fill="none" opacity="0.8"/>
+  
+  <circle cx="30" cy="390" r="5" stroke="white" stroke-width="1.2" fill="none" opacity="0.9"/>
+  <circle cx="30" cy="390" r="3" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <path d="M30 395 L 36 400 L 30 405 L 24 400 Z" stroke="white" stroke-width="0.8" fill="none" opacity="0.8"/>
+  
+  <circle cx="30" cy="510" r="5" stroke="white" stroke-width="1.2" fill="none" opacity="0.9"/>
+  <circle cx="30" cy="510" r="3" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <path d="M30 515 L 36 520 L 30 525 L 24 520 Z" stroke="white" stroke-width="0.8" fill="none" opacity="0.8"/>
+  
+  <circle cx="30" cy="630" r="5" stroke="white" stroke-width="1.2" fill="none" opacity="0.9"/>
+  <circle cx="30" cy="630" r="3" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <path d="M30 635 L 36 640 L 30 645 L 24 640 Z" stroke="white" stroke-width="0.8" fill="none" opacity="0.8"/>
+  
+  <circle cx="30" cy="750" r="5" stroke="white" stroke-width="1.2" fill="none" opacity="0.9"/>
+  <circle cx="30" cy="750" r="3" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <path d="M30 755 L 36 760 L 30 765 L 24 760 Z" stroke="white" stroke-width="0.8" fill="none" opacity="0.8"/>
+  
+  <!-- Vrilles élaborées -->
+  <path d="M30 100 Q 35 95 45 98 Q 55 103 60 110 Q 65 115 70 112" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M30 220 Q 35 215 45 218 Q 55 223 60 230 Q 65 235 70 232" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M30 340 Q 35 335 45 338 Q 55 343 60 350 Q 65 355 70 352" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M30 460 Q 35 455 45 458 Q 55 463 60 470 Q 65 475 70 472" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M30 580 Q 35 575 45 578 Q 55 583 60 590 Q 65 595 70 592" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M30 700 Q 35 695 45 698 Q 55 703 60 710 Q 65 715 70 712" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Détails médiévaux supplémentaires -->
+  <path d="M75 100 L 85 105 L 75 110" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M85 140 L 95 145 L 85 150" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M90 210 L 100 215 L 90 220" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M110 255 L 120 260 L 110 265" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M80 320 L 90 325 L 80 330" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M100 365 L 110 370 L 100 375" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M90 450 L 100 455 L 90 460" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M115 495 L 125 500 L 115 505" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M80 560 L 90 565 L 80 570" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M105 605 L 115 610 L 105 615" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M90 690 L 100 695 L 90 700" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M115 735 L 125 740 L 115 745" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+</svg> 

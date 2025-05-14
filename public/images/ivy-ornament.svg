@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="800" viewBox="0 0 100 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tige principale -->
+  <path d="M50 0 Q 45 400 50 800" stroke="white" stroke-width="1.5" fill="none" opacity="0.7"/>
+  
+  <!-- Feuilles et branches côté gauche -->
+  <path d="M50 100 Q 30 90 15 105 Q 10 115 20 120 Q 35 125 50 110" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M50 180 Q 25 175 10 190 Q 5 200 15 205 Q 30 210 50 195" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M50 250 Q 20 245 5 260 Q 0 275 15 280 Q 35 275 50 260" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M50 350 Q 35 340 20 355 Q 15 370 25 375 Q 40 370 50 355" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M50 450 Q 25 445 10 460 Q 5 475 20 480 Q 40 475 50 455" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M50 550 Q 30 545 15 560 Q 10 575 25 580 Q 40 575 50 555" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M50 650 Q 25 645 10 660 Q 5 675 20 680 Q 35 675 50 655" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  
+  <!-- Feuilles et branches côté droit -->
+  <path d="M50 150 Q 70 145 85 160 Q 90 170 80 175 Q 65 170 50 155" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M50 230 Q 75 225 90 240 Q 95 250 85 255 Q 70 250 50 235" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M50 300 Q 65 295 80 310 Q 85 325 75 330 Q 60 325 50 305" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M50 400 Q 75 395 90 410 Q 95 425 80 430 Q 60 425 50 405" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M50 500 Q 70 495 85 510 Q 90 525 75 530 Q 60 525 50 505" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+  <path d="M50 600 Q 75 595 90 610 Q 95 625 80 630 Q 65 625 50 605" stroke="white" stroke-width="1" fill="none" opacity="0.7"/>
+  <path d="M50 700 Q 70 695 85 710 Q 90 725 75 730 Q 60 725 50 705" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+  
+  <!-- Petites vrilles -->
+  <path d="M50 120 Q 45 115 40 118 Q 35 123 37 127" stroke="white" stroke-width="0.75" fill="none" opacity="0.5"/>
+  <path d="M50 270 Q 55 265 60 268 Q 65 273 63 277" stroke="white" stroke-width="0.75" fill="none" opacity="0.5"/>
+  <path d="M50 370 Q 45 365 40 368 Q 35 373 37 377" stroke="white" stroke-width="0.75" fill="none" opacity="0.5"/>
+  <path d="M50 470 Q 55 465 60 468 Q 65 473 63 477" stroke="white" stroke-width="0.75" fill="none" opacity="0.5"/>
+  <path d="M50 570 Q 45 565 40 568 Q 35 573 37 577" stroke="white" stroke-width="0.75" fill="none" opacity="0.5"/>
+  <path d="M50 670 Q 55 665 60 668 Q 65 673 63 677" stroke="white" stroke-width="0.75" fill="none" opacity="0.5"/>
+</svg> 

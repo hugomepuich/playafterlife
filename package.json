@@ -1,0 +1,45 @@
+{
+  "name": "afterlife",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fontsource/cinzel": "^5.2.5",
+    "@fontsource/eb-garamond": "^5.2.5",
+    "@prisma/client": "^6.7.0",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tiptap/extension-image": "^2.12.0",
+    "@tiptap/extension-link": "^2.12.0",
+    "@tiptap/pm": "^2.12.0",
+    "@tiptap/react": "^2.12.0",
+    "@tiptap/starter-kit": "^2.12.0",
+    "@types/bcryptjs": "^3.0.0",
+    "bcryptjs": "^3.0.2",
+    "multer": "^1.4.5-lts.2",
+    "next": "15.3.2",
+    "next-auth": "^4.24.11",
+    "next-connect": "^1.0.0",
+    "prisma": "^6.7.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-quill": "^2.0.0",
+    "sharp": "^0.34.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

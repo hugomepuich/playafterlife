@@ -1,0 +1,169 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  name         String?
+  password     String
+  role         String        @default("USER")
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  characters   Character[]
+  devblogPosts DevblogPost[]
+  wikiEntries  WikiEntry[]
+  stories      Story[]
+  places       Place[]
+  roadmapItems Roadmap[]
+  faqs         FAQ[]
+  media        Media[]
+}
+
+model DevblogPost {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  authorId  String
+  tags      String   @default("[]")
+  author    User     @relation(fields: [authorId], references: [id])
+}
+
+model WikiEntry {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  type      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  authorId  String
+  tags      String   @default("[]")
+  author    User     @relation(fields: [authorId], references: [id])
+}
+
+model Race {
+  id          String      @id @default(cuid())
+  name        String      @unique
+  description String?
+  image       String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  characters  Character[]
+}
+
+model Story {
+  id          String       @id @default(cuid())
+  title       String
+  summary     String?
+  content     String
+  mainImage   String?
+  images      String       @default("[]")
+  published   Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  authorId    String
+  tags        String       @default("[]")
+  author      User         @relation(fields: [authorId], references: [id])
+  characters  Character[]  @relation("StoryToCharacter")
+  places      Place[]      @relation("StoryToPlace")
+}
+
+model Place {
+  id          String       @id @default(cuid())
+  name        String
+  description String?
+  content     String?
+  mainImage   String?
+  images      String       @default("[]")
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  authorId    String
+  tags        String       @default("[]")
+  author      User         @relation(fields: [authorId], references: [id])
+  characters  Character[]  @relation("PlaceToCharacter")
+  stories     Story[]      @relation("StoryToPlace")
+}
+
+model Character {
+  id               String    @id @default(cuid())
+  name             String
+  lastName         String?
+  title            String?
+  race             String?
+  class            String?
+  faction          String?
+  alignment        String?
+  background       String?
+  description      String?
+  mainImage        String?
+  headerBackground String?
+  images           String    @default("[]")
+  videos           String    @default("[]")
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+  authorId         String
+  tags             String    @default("[]")
+  raceId           String?
+  raceEntity       Race?     @relation(fields: [raceId], references: [id])
+  author           User      @relation(fields: [authorId], references: [id])
+  stories          Story[]   @relation("StoryToCharacter")
+  places           Place[]   @relation("PlaceToCharacter")
+}
+
+model Roadmap {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  status      String   @default("PLANNED") // PLANNED, IN_PROGRESS, COMPLETED
+  progress    Int      @default(0) // 0-100
+  startDate   DateTime?
+  targetDate  DateTime?
+  completedAt DateTime?
+  priority    Int      @default(0)
+  version     String?
+  category    String   @default("FEATURE") // FEATURE, BUGFIX, CONTENT, UI, OTHER
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  authorId    String
+  tags        String   @default("[]")
+  author      User     @relation(fields: [authorId], references: [id])
+}
+
+model FAQ {
+  id          String   @id @default(cuid())
+  question    String
+  answer      String
+  category    String   @default("GENERAL") // GENERAL, GAMEPLAY, STORY, TECHNICAL
+  priority    Int      @default(0)
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+}
+
+model Media {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  type        String   @default("IMAGE") // IMAGE, VIDEO, ARTWORK, CONCEPT
+  url         String
+  thumbnail   String?
+  featured    Boolean  @default(false)
+  published   Boolean  @default(true)
+  width       Int?
+  height      Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  authorId    String
+  tags        String   @default("[]")
+  author      User     @relation(fields: [authorId], references: [id])
+}

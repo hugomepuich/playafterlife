@@ -1,0 +1,388 @@
+@import "tailwindcss";
+@import "@fontsource/cinzel/400.css";
+@import "@fontsource/cinzel/700.css";
+@import "@fontsource/eb-garamond/400.css";
+@import "@fontsource/eb-garamond/500.css";
+@import "@fontsource/eb-garamond/600.css";
+
+:root {
+  --background: #000000;
+  --foreground: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #FFFFFF;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'EB Garamond', serif;
+  min-height: 100vh;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+/* Styliser la barre de défilement */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 1px solid #333333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #333333, #555555);
+  border-radius: 0;
+  border: 1px solid #666666;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #555555, #777777);
+}
+
+/* Animation de lueur modernisée pour certains éléments */
+@keyframes medieval-flicker {
+  0% { opacity: 0.92; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1); }
+  25% { opacity: 0.94; text-shadow: 0 0 12px rgba(255, 255, 255, 0.4), 0 0 22px rgba(255, 255, 255, 0.2); }
+  50% { opacity: 0.90; text-shadow: 0 0 8px rgba(255, 255, 255, 0.2), 0 0 18px rgba(255, 255, 255, 0.1); }
+  75% { opacity: 0.93; text-shadow: 0 0 14px rgba(255, 255, 255, 0.4), 0 0 24px rgba(255, 255, 255, 0.2); }
+  100% { opacity: 0.92; text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1); }
+}
+
+.flame-effect {
+  animation: medieval-flicker 4s infinite;
+  position: relative;
+  z-index: 1;
+}
+
+/* Version plus intense de l'effet de flamme */
+@keyframes medieval-flicker-intense {
+  0% { opacity: 0.92; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.1); }
+  25% { opacity: 0.96; text-shadow: 0 0 12px rgba(255, 255, 255, 0.6), 0 0 22px rgba(255, 255, 255, 0.4), 0 0 32px rgba(255, 255, 255, 0.2); }
+  50% { opacity: 0.90; text-shadow: 0 0 8px rgba(255, 255, 255, 0.4), 0 0 18px rgba(255, 255, 255, 0.3), 0 0 28px rgba(255, 255, 255, 0.1); }
+  75% { opacity: 0.95; text-shadow: 0 0 14px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.4), 0 0 34px rgba(255, 255, 255, 0.2); }
+  100% { opacity: 0.92; text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.1); }
+}
+
+.flame-effect-intense {
+  animation: medieval-flicker-intense 3.5s infinite;
+  position: relative;
+  z-index: 1;
+}
+
+/* Effet de texte gravé */
+.engraved-text {
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.8), 0 1px 1px rgba(255,255,255,0.3);
+  letter-spacing: 0.05em;
+}
+
+/* Stylisation des boutons modernisés */
+.btn-medieval {
+  background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+  border: 1px solid #333333;
+  backdrop-filter: blur(4px);
+}
+
+.btn-medieval:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.btn-medieval:hover:before {
+  left: 100%;
+}
+
+.btn-medieval:hover {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-medieval:active {
+  transform: translateY(1px);
+}
+
+/* Style de bouton médiéval secondaire */
+.btn-medieval-secondary {
+  background: rgba(0, 0, 0, 0.7);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+.btn-medieval-secondary:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.btn-medieval-secondary:hover:before {
+  left: 100%;
+}
+
+.btn-medieval-secondary:hover {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  background: rgba(20, 20, 20, 0.8);
+}
+
+.btn-medieval-secondary:active {
+  transform: translateY(1px);
+}
+
+/* Glass effect pour les panneaux */
+.glass-panel {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+}
+
+/* Effets d'entrée/sortie */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Effet de bordure brillante */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Effet de bordure décorative */
+.ornate-border {
+  position: relative;
+}
+
+.ornate-border::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.ornate-border::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+/* Effet de grain pour un aspect rétro */
+.grain-overlay {
+  position: relative;
+}
+
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/noise-texture.png');
+  opacity: 0.05;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Effet de vignette pour les images */
+.vignette-effect {
+  position: relative;
+}
+
+.vignette-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 100px 20px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+/* Version plus intense de l'effet de vignette */
+.vignette-effect-intense {
+  position: relative;
+}
+
+.vignette-effect-intense::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 120px 40px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+
+/* Animation de scan vertical */
+@keyframes vertical-scan {
+  0% { transform: translateY(-100%); opacity: 0.5; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+.vertical-scan {
+  position: relative;
+  overflow: hidden;
+}
+
+.vertical-scan::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: vertical-scan 2.5s linear infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Effet de lueur de bordure animée */
+@keyframes glow-border-pulse {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+  50% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.1); }
+  100% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+}
+
+.animated-border-glow {
+  animation: glow-border-pulse 3s infinite;
+}
+
+/* Styles pour l'éditeur TipTap */
+.tiptap-editor-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tiptap-toolbar {
+  background: rgba(26, 30, 46, 0.9);
+}
+
+.tiptap-toolbar button {
+  color: #FFFFFF;
+  min-width: 2rem;
+  transition: all 0.2s ease;
+}
+
+.tiptap-toolbar button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.tiptap-toolbar button.is-active {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.tiptap p {
+  margin-bottom: 1em;
+}
+
+.tiptap h2 {
+  font-size: 1.5em;
+  margin: 1em 0 0.5em;
+  color: #FFFFFF;
+}
+
+.tiptap h3 {
+  font-size: 1.25em;
+  margin: 1em 0 0.5em;
+  color: #FFFFFF;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  padding-left: 1em;
+  margin-left: 0.5em;
+  color: #FFFFFF;
+  font-style: italic;
+}

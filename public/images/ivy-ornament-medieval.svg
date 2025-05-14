@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="800" viewBox="0 0 120 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tige principale -->
+  <path d="M60 0 Q 55 400 60 800" stroke="white" stroke-width="1.8" fill="none" opacity="0.8"/>
+  
+  <!-- Tiges secondaires avec détails médiévaux -->
+  <path d="M60 50 Q 58 150 60 250" stroke="white" stroke-width="1.2" fill="none" opacity="0.7"/>
+  <path d="M60 300 Q 62 400 60 500" stroke="white" stroke-width="1.2" fill="none" opacity="0.7"/>
+  <path d="M60 550 Q 58 650 60 750" stroke="white" stroke-width="1.2" fill="none" opacity="0.7"/>
+  
+  <!-- Feuilles stylisées côté gauche -->
+  <!-- Feuille 1 avec détails gothiques -->
+  <path d="M60 80 C 50 75 35 78 25 90 C 15 102 10 115 20 125 C 30 135 40 130 48 122 C 55 115 60 95 60 85" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M25 90 C 30 95 35 98 40 98" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M20 110 C 25 115 32 117 38 115" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 2 avec pointes gothiques -->
+  <path d="M60 180 C 45 175 30 180 20 195 C 10 210 5 225 15 235 C 25 245 40 240 50 230 C 58 220 60 195 60 185" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M20 195 C 25 205 30 210 35 210" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M15 220 C 20 230 30 235 40 230" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 3 avec design médiéval -->
+  <path d="M60 280 C 50 275 35 280 25 295 C 15 310 10 325 20 335 C 30 345 45 340 55 330 C 60 320 60 295 60 285" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M25 295 C 30 305 35 310 40 308" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M20 320 C 30 330 40 335 50 330" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 4 avec ornements gothiques -->
+  <path d="M60 380 C 45 375 30 380 18 395 C 6 410 3 425 15 440 C 27 455 42 450 52 435 C 58 425 60 395 60 385" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M18 395 C 23 405 28 415 35 418" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M15 425 C 25 435 35 438 45 435" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 5 avec éléments médiévaux -->
+  <path d="M60 480 C 50 475 35 480 22 495 C 9 510 6 525 18 540 C 30 555 45 550 55 535 C 60 525 60 490 60 485" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M22 495 C 27 505 32 512 38 515" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M18 525 C 28 535 38 538 48 535" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 6 avec détails gothiques -->
+  <path d="M60 580 C 45 575 30 580 18 595 C 6 610 3 625 15 640 C 27 655 42 650 52 635 C 58 625 60 595 60 585" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M18 595 C 23 605 28 615 35 618" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M15 625 C 25 635 35 638 45 635" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 7 avec éléments gothiques -->
+  <path d="M60 680 C 50 675 35 680 22 695 C 9 710 6 725 18 740 C 30 755 45 750 55 735 C 60 725 60 690 60 685" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M22 695 C 27 705 32 712 38 715" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M18 725 C 28 735 38 738 48 735" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuilles stylisées côté droit -->
+  <!-- Feuille 1 avec détails gothiques -->
+  <path d="M60 130 C 70 125 85 128 95 140 C 105 152 110 165 100 175 C 90 185 80 180 72 172 C 65 165 60 145 60 135" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M95 140 C 90 145 85 148 80 148" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M100 160 C 95 165 88 167 82 165" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 2 avec pointes gothiques -->
+  <path d="M60 230 C 75 225 90 230 100 245 C 110 260 115 275 105 285 C 95 295 80 290 70 280 C 62 270 60 245 60 235" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M100 245 C 95 255 90 260 85 260" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M105 270 C 100 280 90 285 80 280" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 3 avec design médiéval -->
+  <path d="M60 330 C 70 325 85 330 95 345 C 105 360 110 375 100 385 C 90 395 75 390 65 380 C 60 370 60 345 60 335" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M95 345 C 90 355 85 360 80 358" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M100 370 C 90 380 80 385 70 380" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 4 avec ornements gothiques -->
+  <path d="M60 430 C 75 425 90 430 102 445 C 114 460 117 475 105 490 C 93 505 78 500 68 485 C 62 475 60 445 60 435" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M102 445 C 97 455 92 465 85 468" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M105 475 C 95 485 85 488 75 485" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 5 avec éléments médiévaux -->
+  <path d="M60 530 C 70 525 85 530 98 545 C 111 560 114 575 102 590 C 90 605 75 600 65 585 C 60 575 60 540 60 535" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M98 545 C 93 555 88 562 82 565" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M102 575 C 92 585 82 588 72 585" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 6 avec détails gothiques -->
+  <path d="M60 630 C 75 625 90 630 102 645 C 114 660 117 675 105 690 C 93 705 78 700 68 685 C 62 675 60 645 60 635" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M102 645 C 97 655 92 665 85 668" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M105 675 C 95 685 85 688 75 685" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Feuille 7 avec éléments gothiques -->
+  <path d="M60 730 C 70 725 85 730 98 745 C 111 760 114 775 102 790 C 90 805 75 800 65 785 C 60 775 60 740 60 735" stroke="white" stroke-width="1.2" fill="none" opacity="0.8"/>
+  <path d="M98 745 C 93 755 88 762 82 765" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  <path d="M102 775 C 92 785 82 788 72 785" stroke="white" stroke-width="0.8" fill="none" opacity="0.7"/>
+  
+  <!-- Nœuds décoratifs médiévaux -->
+  <circle cx="60" cy="50" r="4" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <circle cx="60" cy="50" r="2" stroke="white" stroke-width="0.5" fill="none" opacity="0.9"/>
+  
+  <circle cx="60" cy="200" r="4" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <circle cx="60" cy="200" r="2" stroke="white" stroke-width="0.5" fill="none" opacity="0.9"/>
+  
+  <circle cx="60" cy="350" r="4" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <circle cx="60" cy="350" r="2" stroke="white" stroke-width="0.5" fill="none" opacity="0.9"/>
+  
+  <circle cx="60" cy="500" r="4" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <circle cx="60" cy="500" r="2" stroke="white" stroke-width="0.5" fill="none" opacity="0.9"/>
+  
+  <circle cx="60" cy="650" r="4" stroke="white" stroke-width="0.8" fill="none" opacity="0.9"/>
+  <circle cx="60" cy="650" r="2" stroke="white" stroke-width="0.5" fill="none" opacity="0.9"/>
+  
+  <!-- Petites vrilles gothiques -->
+  <path d="M60 100 Q 55 95 48 98 Q 42 103 44 109" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 150 Q 65 145 72 148 Q 78 153 76 159" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 250 Q 55 245 48 248 Q 42 253 44 259" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 300 Q 65 295 72 298 Q 78 303 76 309" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 400 Q 55 395 48 398 Q 42 403 44 409" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 450 Q 65 445 72 448 Q 78 453 76 459" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 550 Q 55 545 48 548 Q 42 553 44 559" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 600 Q 65 595 72 598 Q 78 603 76 609" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 700 Q 55 695 48 698 Q 42 703 44 709" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  <path d="M60 750 Q 65 745 72 748 Q 78 753 76 759" stroke="white" stroke-width="0.8" fill="none" opacity="0.6"/>
+  
+  <!-- Détails gothiques supplémentaires sur la tige principale -->
+  <path d="M60 25 L 64 30 L 60 35 L 56 30 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+  <path d="M60 75 L 64 80 L 60 85 L 56 80 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+  <path d="M60 175 L 64 180 L 60 185 L 56 180 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+  <path d="M60 275 L 64 280 L 60 285 L 56 280 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+  <path d="M60 375 L 64 380 L 60 385 L 56 380 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+  <path d="M60 475 L 64 480 L 60 485 L 56 480 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+  <path d="M60 575 L 64 580 L 60 585 L 56 580 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+  <path d="M60 675 L 64 680 L 60 685 L 56 680 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+  <path d="M60 775 L 64 780 L 60 785 L 56 780 Z" stroke="white" stroke-width="0.5" fill="none" opacity="0.7"/>
+</svg> 
