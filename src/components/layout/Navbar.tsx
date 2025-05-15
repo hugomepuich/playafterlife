@@ -30,27 +30,27 @@ const Navbar = () => {
   
   // Structure du menu avec sous-menus
   const menuStructure = [
-    { name: 'Accueil', href: '/' },
+    { name: 'Home', href: '/' },
     { 
-      name: 'Univers',
+      name: 'Universe',
       children: [
         { name: 'Codex', href: '/wiki' },
-        { name: 'Personnages', href: '/wiki/characters' },
+        { name: 'Souls', href: '/wiki/characters' },
         { name: 'Races', href: '/wiki/races' },
-        { name: 'Lieux', href: '/wiki/places' },
-        { name: 'Histoires', href: '/wiki/stories' },
+        { name: 'Places', href: '/wiki/places' },
+        { name: 'Story', href: '/wiki/stories' },
       ]
     },
-    { name: 'Mécaniques', href: '/mechanics' },
+    { name: 'Mechanics', href: '/mechanics' },
     { 
-      name: 'Développement',
+      name: 'Development',
       children: [
         { name: 'Devblog', href: '/devblog' },
         { name: 'Roadmap', href: '/devblog/roadmap' },
         { name: 'FAQ', href: '/faq' },
       ]
     },
-    { name: 'Galerie', href: '/galerie' },
+    { name: 'Medias', href: '/galerie' },
   ];
   
   // Gestion du hover avec délai
