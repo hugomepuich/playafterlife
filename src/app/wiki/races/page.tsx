@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 interface Race {
   id: string;
@@ -92,6 +93,7 @@ const cardStyles = `
 
 export default function RacesPage() {
   const { data: session } = useSession();
+  const router = useRouter();
   const [races, setRaces] = useState<Race[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -370,16 +372,19 @@ export default function RacesPage() {
                       {session?.user && (session.user as any).role === 'ADMIN' && (
                         <div className="mt-auto pt-3 border-t border-gray-700/30 flex justify-between items-center">
                           <div className="flex gap-3">
-                            <Link
-                              href={`/wiki/races/${race.id}/edit`}
+                            <button
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                router.push(`/wiki/races/${race.id}/edit`);
+                              }}
                               className="text-xs text-blue-400 hover:text-blue-300 transition-colors flex items-center"
-                              onClick={(e) => e.stopPropagation()}
                             >
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                               </svg>
                               Modifier
-                            </Link>
+                            </button>
                             <button
                               onClick={(e) => {
                                 e.preventDefault();

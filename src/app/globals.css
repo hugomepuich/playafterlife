@@ -5,6 +5,21 @@
 @import "@fontsource/eb-garamond/500.css";
 @import "@fontsource/eb-garamond/600.css";
 
+/* Heroking Font */
+@font-face {
+  font-family: 'Heroking';
+  src: url('/fonts/Heroking-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Classe pour le texte Afterlife avec police Heroking */
+.heroking-font {
+  font-family: 'Heroking', 'Cinzel', serif;
+  letter-spacing: 0.05em;
+}
+
 :root {
   --background: #000000;
   --foreground: #FFFFFF;
@@ -204,6 +219,18 @@ a {
   animation: fadeIn 0.4s ease-out forwards;
 }
 
+/* Animation pour le héro - visible immédiatement */
+@keyframes heroFadeIn {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: heroFadeIn 1s ease-out forwards;
+  animation-delay: 0s;
+  opacity: 1;
+}
+
 /* Effet de bordure brillante */
 .glow-border {
   position: relative;
@@ -386,3 +413,6 @@ a {
   color: #FFFFFF;
   font-style: italic;
 }
+
+/* Styles pour les éléments AOS - assurer qu'ils sont visibles par défaut */
+/* Supprimé pour permettre aux animations AOS de fonctionner correctement */

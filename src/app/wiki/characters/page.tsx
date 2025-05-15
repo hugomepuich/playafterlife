@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 interface Character {
   id: string;
@@ -23,6 +24,8 @@ const cardStyles = `
     padding: 2rem 0;
     width: 100%;
     overflow: visible;
+    display: flex;
+    justify-content: center;
   }
   
   .characters-grid {
@@ -31,6 +34,7 @@ const cardStyles = `
     gap: 1rem;
     padding: 1rem 0;
     width: 100%;
+    max-width: 1400px;
     overflow: visible;
   }
   
@@ -112,6 +116,7 @@ const cardStyles = `
 
 export default function CharactersPage() {
   const { data: session } = useSession();
+  const router = useRouter();
   const [characters, setCharacters] = useState<Character[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -121,17 +126,33 @@ export default function CharactersPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [isFilterExpanded, setIsFilterExpanded] = useState(false);
   
-  // Fonction pour générer un arrière-plan aléatoire
-  const getBgClass = () => {
-    const bgClasses = ['bg-bg-1', 'bg-bg-2', 'bg-bg-3', 'bg-bg-4', 'bg-bg-5', 'bg-bg-6'];
-    const randomIndex = Math.floor(Math.random() * bgClasses.length);
-    return bgClasses[randomIndex];
-  };
-
   // Extract unique values for filters
   const races = Array.from(new Set(characters.map(c => c.race).filter(Boolean) as string[])).sort();
   const classes = Array.from(new Set(characters.map(c => c.class).filter(Boolean) as string[])).sort();
   const factions = Array.from(new Set(characters.map(c => c.faction).filter(Boolean) as string[])).sort();
+
+  const handleDeleteCharacter = async (id: string) => {
+    if (!window.confirm('Êtes-vous sûr de vouloir supprimer ce personnage ?')) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/wiki/characters/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Erreur lors de la suppression');
+      }
+
+      // Mise à jour de la liste des personnages après suppression
+      setCharacters(characters.filter(character => character.id !== id));
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Une erreur est survenue';
+      alert(`Erreur: ${message}`);
+    }
+  };
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -222,8 +243,17 @@ export default function CharactersPage() {
       
       {/* Header with section title and create button */}
       <div className="relative py-16 mb-8 border-b border-gray-700/50">
-        <div className={`absolute inset-0 ${getBgClass()} bg-cover bg-center opacity-20 grayscale vignette-effect-intense`}></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 to-black/70"></div>
+        <div className="absolute inset-0">
+          <Image
+            src="/headers/character_header.png"
+            alt="Characters header"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-black"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="max-w-2xl">
@@ -513,14 +543,56 @@ export default function CharactersPage() {
                           </span>
                         )}
                       </div>
-                      <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <span className="text-xs text-white bg-black/60 border border-gray-700/50 px-3 py-1 rounded-sm inline-flex items-center">
-                          View
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </span>
-                      </div>
+                      {session?.user && (session.user as any).role === 'ADMIN' && (
+                        <div className="mt-auto pt-3 border-t border-gray-700/30 flex justify-between items-center">
+                          <div className="flex gap-3">
+                            <button
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                router.push(`/wiki/characters/${character.id}/edit`);
+                              }}
+                              className="text-xs text-blue-400 hover:text-blue-300 transition-colors flex items-center"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                              </svg>
+                              Modifier
+                            </button>
+                            <button
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                handleDeleteCharacter(character.id);
+                              }}
+                              className="text-xs text-red-400 hover:text-red-300 transition-colors flex items-center"
+                            >
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                              </svg>
+                              Supprimer
+                            </button>
+                          </div>
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="text-xs text-white bg-black/60 border border-gray-700/50 px-3 py-1 rounded-sm inline-flex items-center">
+                              Voir
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      )}
+                      {!session?.user && (
+                        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="text-xs text-white bg-black/60 border border-gray-700/50 px-3 py-1 rounded-sm inline-flex items-center">
+                            Voir
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </Link>
@@ -528,7 +600,7 @@ export default function CharactersPage() {
             </div>
           </div>
         ) : (
-          <div className="space-y-4 fade-in">
+          <div className="space-y-4 fade-in max-w-4xl mx-auto">
             {filteredCharacters.map(character => (
               <Link
                 key={character.id}
@@ -608,8 +680,56 @@ export default function CharactersPage() {
                         </span>
                       )}
                     </div>
-                    {/* Ajout d'une bordure décorative */}
-                    <div className="absolute top-1/2 right-5 transform -translate-y-1/2 h-full w-[1px] opacity-0 group-hover:opacity-30 transition-opacity bg-gradient-to-b from-transparent via-gray-500 to-transparent"></div>
+                    {session?.user && (session.user as any).role === 'ADMIN' && (
+                      <div className="mt-4 pt-3 border-t border-gray-700/30 flex justify-between items-center">
+                        <div className="flex gap-3">
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              router.push(`/wiki/characters/${character.id}/edit`);
+                            }}
+                            className="text-xs text-blue-400 hover:text-blue-300 transition-colors flex items-center"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                            Modifier
+                          </button>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              handleDeleteCharacter(character.id);
+                            }}
+                            className="text-xs text-red-400 hover:text-red-300 transition-colors flex items-center"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                            Supprimer
+                          </button>
+                        </div>
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="text-xs text-white bg-black/60 border border-gray-700/50 px-3 py-1 rounded-sm inline-flex items-center">
+                            Voir
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    )}
+                    {!session?.user && (
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">
+                        <span className="text-xs text-white bg-black/60 border border-gray-700/50 px-3 py-1 rounded-sm inline-flex items-center">
+                          Voir
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Link>

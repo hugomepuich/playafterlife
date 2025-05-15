@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col bg-black text-white font-body">
+      <body className="min-h-screen flex flex-col bg-black text-white font-body overflow-x-hidden">
         <NextAuthProvider>
           <SideOrnaments />
           <Navbar />
