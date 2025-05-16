@@ -9,6 +9,8 @@ import 'aos/dist/aos.css';
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const embraceVideoRef = useRef<HTMLVideoElement>(null);
+  const destinyVideoRef = useRef<HTMLVideoElement>(null);
   
   const handleVideoEnded = () => {
     if (videoRef.current) {
@@ -21,6 +23,34 @@ export default function Home() {
     if (videoRef.current) {
       videoRef.current.load();
       videoRef.current.play();
+    }
+  };
+
+  const handleEmbraceVideoEnded = () => {
+    if (embraceVideoRef.current) {
+      embraceVideoRef.current.play();
+    }
+  };
+
+  const handleEmbraceVideoError = (e: any) => {
+    console.error('Erreur de lecture vidéo embrace:', e);
+    if (embraceVideoRef.current) {
+      embraceVideoRef.current.load();
+      embraceVideoRef.current.play();
+    }
+  };
+
+  const handleDestinyVideoEnded = () => {
+    if (destinyVideoRef.current) {
+      destinyVideoRef.current.play();
+    }
+  };
+
+  const handleDestinyVideoError = (e: any) => {
+    console.error('Erreur de lecture vidéo destiny:', e);
+    if (destinyVideoRef.current) {
+      destinyVideoRef.current.load();
+      destinyVideoRef.current.play();
     }
   };
 
@@ -165,23 +195,29 @@ export default function Home() {
       
       {/* Section Aperçu du jeu */}
       <section id="game-overview" className="py-16 md:py-24 bg-black relative">
-        {/* Fond d'image qui prend la moitié gauche */}
+        {/* Fond vidéo qui prend la moitié gauche */}
         <div className="absolute left-0 top-0 bottom-0 w-full md:w-3/5 overflow-hidden">
           <div className="relative w-full h-full">
-            <Image 
-              src="/backgrounds/HighresScreenshot00082.png" 
-              alt="Afterlife gameplay" 
-              fill 
-              className="object-cover"
-              priority
-            />
-            {/* Gradient de fondu moins intense pour ne pas trop assombrir l'image */}
+            <video
+              ref={embraceVideoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              onEnded={handleEmbraceVideoEnded}
+              onError={handleEmbraceVideoError}
+              className="absolute w-full h-full object-cover"
+              preload="auto"
+            >
+              <source src="/videos/mini-pres-video.mp4" type="video/mp4" />
+            </video>
+            {/* Gradient de fondu moins intense pour ne pas trop assombrir la vidéo */}
             <div className="absolute inset-0 md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-black/90 pointer-events-none"></div>
-            {/* Gradient pour fondre l'image avec l'espace noir du dessus */}
+            {/* Gradient pour fondre la vidéo avec l'espace noir du dessus */}
             <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black to-transparent"></div>
-            {/* Gradient pour fondre l'image en bas */}
+            {/* Gradient pour fondre la vidéo en bas */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
-            {/* Gradient pour fondre l'image sur sa gauche */}
+            {/* Gradient pour fondre la vidéo sur sa gauche */}
             <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-black/70 to-transparent"></div>
             {/* Overlay pour mobile */}
             <div className="absolute inset-0 md:hidden bg-black/70"></div>
@@ -190,7 +226,7 @@ export default function Home() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-            {/* Première colonne vide pour laisser place à l'image en background */}
+            {/* Première colonne vide pour laisser place à la vidéo en background */}
             <div className="hidden md:block md:col-span-3"></div>
             
             {/* Titre et contenu textuel dans la seconde colonne */}
@@ -204,16 +240,13 @@ export default function Home() {
               
               <div className="space-y-6">
                 <p className="text-gray-300">
-                  Parcourez des terres vastes et diversifiées, des forêts mystiques aux cités fortifiées en ruines. 
-                  Chaque lieu recèle son lot de défis, de trésors et de secrets à découvrir.
+                You awaken in a place unknown to you, with only one feeling anchoring your soul—the unshakable need to find someone dear to you.
+                With the help of Ivy, you will journey through shattered realms, each scarred by a cataclysm whose cause remains hidden in shadow.
                 </p>
-                <p className="text-gray-300">
-                  Plongez dans une narration riche et complexe où vos choix influencent le déroulement de l'histoire. 
-                  Rencontrez des personnages mémorables dont les destins s'entremêlent avec le vôtre.
-                </p>
+
                 <div className="pt-4">
                   <Link href="/wiki" className="btn-medieval text-lg px-8 py-4 flex items-center justify-center">
-                    <span>Explorer le codex</span>
+                    <span>Explore the story</span>
                     <svg className="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
@@ -221,6 +254,78 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Espace de transition entre sections */}
+      <div className="h-16 bg-black"></div>
+      
+      {/* Section Aperçu du jeu version 2 */}
+      <section className="py-16 md:py-24 bg-black relative">
+        {/* Fond vidéo qui prend la moitié droite (inversé par rapport à la section précédente) */}
+        <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 overflow-hidden">
+          <div className="relative w-full h-full">
+            <video
+              ref={destinyVideoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              onEnded={handleDestinyVideoEnded}
+              onError={handleDestinyVideoError}
+              className="absolute w-full h-full object-cover"
+              preload="auto"
+            >
+              <source src="/videos/mini-pres-video-2.mp4" type="video/mp4" />
+            </video>
+            {/* Gradient de fondu moins intense pour ne pas trop assombrir la vidéo */}
+            <div className="absolute inset-0 md:bg-gradient-to-l md:from-transparent md:via-transparent md:to-black/90 pointer-events-none"></div>
+            {/* Gradient pour fondre la vidéo avec l'espace noir du dessus */}
+            <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black to-transparent"></div>
+            {/* Gradient pour fondre la vidéo en bas */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
+            {/* Gradient pour fondre la vidéo sur sa droite */}
+            <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-black/70 to-transparent"></div>
+            {/* Overlay pour mobile */}
+            <div className="absolute inset-0 md:hidden bg-black/70"></div>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+            {/* Titre et contenu textuel dans la première colonne (inversé par rapport à la section précédente) */}
+            <div className="space-y-8 relative z-10 text-center md:col-span-2" data-aos="fade-right">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-title font-bold mb-4 text-white flame-effect">Discover Your True Self</h2>
+                <p className="text-lg text-gray-300">
+                  The Gods left this place a long time ago, no one is there to punish you. 
+                </p>
+              </div>
+              
+              <div className="space-y-6">
+              <p className="text-gray-300">
+              It is up to you to walk the path of light—or descend into darkness.
+Your relationships, your choices, and your actions will shape the fate of the world around you.
+Every bond forged, every life spared or taken, leaves a mark.
+                </p>
+                <p className="text-gray-300">
+                In the end, it will be your will that shapes the fate of this world—
+                to help it rise from the ashes… or to deliver the final blow.
+                </p>
+                <div className="pt-4">
+                  <Link href="/wiki/characters" className="btn-medieval text-lg px-8 py-4 flex items-center justify-center">
+                    <span>Explore characters</span>
+                    <svg className="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            
+            {/* Colonne vide pour laisser place à la vidéo en background */}
+            <div className="hidden md:block md:col-span-3"></div>
           </div>
         </div>
       </section>

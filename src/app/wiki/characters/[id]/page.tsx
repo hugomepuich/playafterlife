@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
+import React from 'react';
 
 interface Character {
   id: string;
@@ -61,6 +62,8 @@ const formatTextWithLineBreaks = (text: string) => {
 };
 
 export default function CharacterPage({ params }: { params: { id: string } }) {
+  // Utiliser React.use() pour déballer les params
+  const resolvedParams = React.use(params);
   const router = useRouter();
   const { data: session } = useSession();
   const [character, setCharacter] = useState<Character | null>(null);
@@ -87,7 +90,7 @@ export default function CharacterPage({ params }: { params: { id: string } }) {
     }
     
     try {
-      const response = await fetch(`/api/wiki/characters/${params.id}`, {
+      const response = await fetch(`/api/wiki/characters/${resolvedParams.id}`, {
         method: 'DELETE',
       });
       
@@ -105,7 +108,7 @@ export default function CharacterPage({ params }: { params: { id: string } }) {
   useEffect(() => {
     const fetchCharacter = async () => {
       try {
-        const response = await fetch(`/api/wiki/characters/${params.id}`);
+        const response = await fetch(`/api/wiki/characters/${resolvedParams.id}`);
         if (!response.ok) {
           throw new Error('Character not found');
         }
@@ -138,7 +141,7 @@ export default function CharacterPage({ params }: { params: { id: string } }) {
     };
 
     fetchCharacter();
-  }, [params.id]);
+  }, [resolvedParams.id]);
 
   // Appliquer les styles CSS personnalisés pour supprimer les teintes bleues
   useEffect(() => {
