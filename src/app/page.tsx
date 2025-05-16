@@ -378,13 +378,13 @@ Every bond forged, every life spared or taken, leaves a mark.
             
             {/* Wiki/Codex */}
             <div data-aos="fade-left">
-              <h2 className="text-3xl font-title font-bold mb-6 text-white flame-effect">CODEX</h2>
+              <h2 className="text-3xl font-title font-bold mb-6 text-white flame-effect">UNIVERSE</h2>
               <p className="text-lg text-gray-300 mb-6">
                 Explorez l'univers d'Afterlife à travers notre wiki détaillé. Découvrez les personnages, les lieux, 
                 les objets et l'histoire riche qui constituent le monde du jeu.
               </p>
               <Link href="/wiki" className="btn-medieval text-lg px-8 py-4 flex items-center justify-center">
-                <span>Explorer le codex</span>
+                <span>Explore the universe</span>
                 <svg className="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -550,7 +550,7 @@ Every bond forged, every life spared or taken, leaves a mark.
                 Suivre le devblog
               </Link>
               <Link href="/wiki" className="btn-medieval text-lg px-8 py-4 flex items-center justify-center">
-                <span>Explorer le codex</span>
+                <span>Explore the universe</span>
                 <svg className="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>

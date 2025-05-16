@@ -45,7 +45,7 @@ const Footer = () => {
 
   const navLinks = [
     { name: 'Accueil', href: '/' },
-    { name: 'Codex', href: '/wiki' },
+    { name: 'Universe', href: '/wiki' },
     { name: 'Personnages', href: '/wiki/characters' },
     { name: 'Races', href: '/wiki/races' },
     { name: 'Lieux', href: '/wiki/places' },

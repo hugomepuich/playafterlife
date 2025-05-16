@@ -34,7 +34,7 @@ const Navbar = () => {
     { 
       name: 'Universe',
       children: [
-        { name: 'Codex', href: '/wiki' },
+        { name: 'Universe', href: '/wiki' },
         { name: 'Souls', href: '/wiki/characters' },
         { name: 'Races', href: '/wiki/races' },
         { name: 'Places', href: '/wiki/places' },
